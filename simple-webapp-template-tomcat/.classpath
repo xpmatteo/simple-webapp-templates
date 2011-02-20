@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/|**/CVS/" kind="src" path="src/main/java"/>
+	<classpathentry javadocpath="M2_REPO/commons-lang/commons-lang/2.5/commons-lang-2.5-javadoc.jar" kind="var" path="M2_REPO/commons-lang/commons-lang/2.5/commons-lang-2.5.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.5/commons-lang-2.5-sources.jar"/>
+	<classpathentry javadocpath="M2_REPO/mysql/mysql-connector-java/5.1.13/mysql-connector-java-5.1.13-javadoc.jar" kind="var" path="M2_REPO/mysql/mysql-connector-java/5.1.13/mysql-connector-java-5.1.13.jar" sourcepath="M2_REPO/mysql/mysql-connector-java/5.1.13/mysql-connector-java-5.1.13-sources.jar"/>
+	<classpathentry javadocpath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-javadoc.jar" kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
+	<classpathentry javadocpath="M2_REPO/junit/junit/4.8.2/junit-4.8.2-javadoc.jar" kind="var" path="M2_REPO/junit/junit/4.8.2/junit-4.8.2.jar" sourcepath="M2_REPO/junit/junit/4.8.2/junit-4.8.2-sources.jar"/>
+	<classpathentry javadocpath="M2_REPO/xmlunit/xmlunit/1.1/xmlunit-1.1-javadoc.jar" kind="var" path="M2_REPO/xmlunit/xmlunit/1.1/xmlunit-1.1.jar" sourcepath="M2_REPO/xmlunit/xmlunit/1.1/xmlunit-1.1-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="src/main/webapp/WEB-INF/classes"/>
+</classpath>

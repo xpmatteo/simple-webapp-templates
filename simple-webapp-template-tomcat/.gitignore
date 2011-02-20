@@ -1,0 +1,9 @@
+bin
+target
+.svn
+.DS_Store
+*~
+reports
+tomcat-stuff/logs/*
+tomcat-stuff/work/*
+tomcat-stuff/temp/*

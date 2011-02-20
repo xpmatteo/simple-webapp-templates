@@ -1,0 +1,17 @@
+<Server port="8005" shutdown="SHUTDOWN">
+  <Service name="Catalina">
+    <Connector port="8080" />
+    <Engine name="Catalina" defaultHost="localhost">
+      <Host name="localhost" appBase="webapps" >
+        <Context
+            reloadable="true"
+            path=""
+            docBase="../../src/main/webapp" 
+            >
+            <WatchedResource>WEB-INF/web.xml</WatchedResource>
+            <WatchedResource>WEB-INF/classes/*</WatchedResource>
+        </Context>
+      </Host>
+    </Engine>
+  </Service>
+</Server>
