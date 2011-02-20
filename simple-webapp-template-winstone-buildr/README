@@ -1,0 +1,23 @@
+
+This is a template for creating a simple web application. 
+
+It provides 
+
+ * Build and dependencies management with buildr
+ * Easy starting up of the application
+
+== Prerequisites ==
+
+Install ruby (On Ubuntu: apt-get install ruby-full) 
+Install rubygems.
+Execute 
+  gem install buildr
+
+== How to run ==
+
+Execute
+  script/server.sh
+
+then open browser at http://localhost:8080
+
+
