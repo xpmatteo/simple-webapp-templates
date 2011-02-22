@@ -20,7 +20,7 @@ echo "Starting server"
 script/server.sh > /dev/null &
 sleep 2
 
-lynx -dump http://localhost:8080/ | grep -qi 'Hello, World!' && echo "OK!" || echo "Didn't work"
+lynx -dump http://localhost:8080/ | grep -qi 'Hello, World!' && echo "OK!" || fail "Didn't work"
 
 while [ "$(server_pid)" != "" ]; do
   # echo kill $(server_pid)
