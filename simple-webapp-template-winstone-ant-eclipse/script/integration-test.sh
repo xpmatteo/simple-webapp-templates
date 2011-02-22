@@ -14,7 +14,7 @@ which lynx > /dev/null || fail "Install lynx"
 cd "$(dirname $0)/.."
 
 echo "Building war"
-buildr -s clean package || exit 1
+ant war || exit 1
 
 echo "Starting server"
 script/server.sh > /dev/null &
