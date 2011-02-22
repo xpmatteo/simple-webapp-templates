@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<project name="sample-webapp" default="war">
+
+    <property name="build.dir"      location="target" />
+    <property name="build.prod.dir" location="${build.dir}/prod"/>
+    <property name="build.test.dir" location="${build.dir}/test"/>
+    <property name="src.dir"        location="src/main/java"/>
+    <property name="web.dir"        location="src/main/webapp" />
+    <property name="test.dir"       location="src/test/java"/>
+    <property name="config.dir"     location="src/main/webapp/WEB-INF" />
+    <property name="lib.dir"        location="lib" />
+    <property name="war.file"       location="${build.dir}/${ant.project.name}.war"/>
+
+    <path id="project.classpath">
+        <pathelement location="${build.prod.dir}" />
+        <pathelement location="${build.test.dir}" />
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="prepare">
+        <mkdir dir="${build.prod.dir}"/>
+        <mkdir dir="${build.test.dir}"/>
+    </target>
+
+    <target name="compile" depends="prepare">
+        <javac source="1.5" target="1.5" destdir="${build.prod.dir}" debug="true" encoding="utf-8" includeantruntime="false">
+            <src path="${src.dir}" />
+            <classpath refid="project.classpath" />
+        </javac>
+    </target>
+
+    <target name="compile-tests" depends="compile">
+        <javac source="1.5" target="1.5" destdir="${build.test.dir}" encoding="utf-8" includeantruntime="false">
+            <src path="${test.dir}" />
+            <classpath refid="project.classpath" />
+        </javac>
+    </target>
+
+    <target name="test" depends="compile-tests">
+        <junit haltonfailure="true" haltonerror="true"
+          outputtoformatters="yes" fork="yes" forkmode="perBatch" maxmemory="256m" dir="${basedir}">
+            <classpath refid="project.classpath" />
+            <classpath location="${src.dir}" />
+            <classpath location="${test.dir}" />
+            <formatter type="brief" usefile="no" />
+            <batchtest>
+                <fileset dir="${build.test.dir}" includes="**/*Test.class" />
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <target name="war" depends="compile">
+        <war destfile="${war.file}" webxml="${config.dir}/web.xml">
+            <classes dir="${build.prod.dir}" />
+            <fileset dir="${web.dir}" />
+            <classes dir="${config.dir}" includes="log4j.*" />
+        </war>
+    </target>
+</project>

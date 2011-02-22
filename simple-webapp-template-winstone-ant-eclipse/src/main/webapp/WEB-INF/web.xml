@@ -1,0 +1,20 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+     version="2.4">
+     
+  <display-name>Sample Webapp</display-name>
+  <servlet>
+    <servlet-name>only-servlet</servlet-name>
+    <servlet-class>name.vaccari.matteo.webapp.MainServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>only-servlet</servlet-name>
+    <url-pattern>/app/*</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>app</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,9 @@
+bin
+target
+.svn
+.DS_Store
+*~
+reports
+.classpath
+.project
+.settings
