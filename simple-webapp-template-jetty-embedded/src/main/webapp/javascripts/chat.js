@@ -1,0 +1,5 @@
+
+
+function chat_init() {
+}
+
